@@ -5,8 +5,19 @@
   "author": "icantunderstand@yeah.net",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
+    "isomorphic-fetch": "^2.2.1",
+    "nodemon": "^1.18.10",
     "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react-dom": "^16.8.5",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "serialize-javascript": "^1.6.1"
+  },
+  "scripts": {
+    "start": "webpack -w  --mode development & nodemon server.js"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
