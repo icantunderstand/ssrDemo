@@ -4,9 +4,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import serialize from 'serialize-javascript';
 import App from '../shared/index';
-import { matchPath, StaticRouter } from 'react-router-dom';
-import AppReducer from '../shared/reducer/index';
-import { Provider } from 'react-redux';
+import { match } from 'react-router';
 import routes from '../shared/routes.js';
 import configureStore from '../shared/reducer/configStore';
 
@@ -16,16 +14,13 @@ app.use(express.static('public'));
 // use thunk
 const store = configureStore({});
 app.get("*", (req,res,next) => {
-  const activeRoute = routes.find(route => matchPath(req.url, route)) || {};
-  const promise = activeRoute.fetchInitalData ? store.dispatch(activeRoute.fetchInitalData(req.path)) : Promise.resolve();
-  promise.then(() => {
+  match({ location: req.url, routes }, (err, redirectLocation, renderProps) => {
+    if(err) {
+      console.log(err);
+    }
     const data = store.getState();
-    const markup = renderToString(
-      <Provider store={store}>
-        <StaticRouter location={req.url}>
-          <App/>
-        </StaticRouter>
-      </Provider>);
+    const el = React.createElement(App, { store, renderProps });
+    const apphtml = renderToString(el);
     res.send(`
       <!DOCTYPE html>
       <html>
@@ -36,12 +31,12 @@ app.get("*", (req,res,next) => {
         </head>
 
         <body>
-          <div id="app">${markup}</div>
+          <div id="app">${apphtml}</div>
           <script src="/bundle.js" defer></script>
         </body>
       </html>
     `);
-  }).catch(next)
+  })
 })
 
 app.listen(3000, () => {

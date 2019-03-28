@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 
 class Grid extends Component {
   render() {
-    let repos = [];
+    const { items } = this.props;
     return (
       <ul style={{display: 'flex', flexWrap: 'wrap'}}>
-        {repos.map(({ name, owner }) => (
+        {items.map(({ name, owner }) => (
           <li key={name} style={{margin: 30}}>
             <ul>
               <li>{name}</li>
@@ -17,5 +18,8 @@ class Grid extends Component {
     )
   }
 }
-
-export default Grid;
+const mapStateToProps = (state) => {
+  const { items } = state.grid;
+  return { items };
+}
+export default connect(mapStateToProps)(Grid);
