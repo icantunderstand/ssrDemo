@@ -14,9 +14,10 @@ const browserConfig = {
       {
         test: /\.js$/,
         use: "babel-loader",
+        include: path.resolve(__dirname, 'src'),
       },
       {
-        test: /\.css.js$/,
+        test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       }
     ]

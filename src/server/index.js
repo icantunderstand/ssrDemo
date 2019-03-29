@@ -7,11 +7,12 @@ import App from '../shared/index';
 import { match } from 'react-router';
 import routes from '../shared/routes.js';
 import configureStore from '../shared/reducer/configStore';
+import { logger } from './middleware';
 
 const app = express();
 app.use(cors());
 app.use(express.static('public'));
-// use thunk
+app.use(logger);
 const store = configureStore({});
 app.get("*", (req,res,next) => {
   match({ location: req.url, routes }, (err, redirectLocation, renderProps) => {
