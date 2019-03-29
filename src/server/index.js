@@ -18,24 +18,33 @@ app.get("*", (req,res,next) => {
     if(err) {
       console.log(err);
     }
-    const data = store.getState();
-    const el = React.createElement(App, { store, renderProps });
-    const apphtml = renderToString(el);
-    res.send(`
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <title>SSR with RR</title>
-          <link rel="icon" href="data:;base64,=">
-          <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
-        </head>
+    let promise = null;
+    if(renderProps.components && renderProps.components[0].getInitialData) {
+      promise = store.dispatch(renderProps.components[0].getInitialData());
+      //filtterComponent
+    } else {
+      promise = Promise.resolve();
+    }
+    promise.then(() => {
+      const data = store.getState();
+      const el = React.createElement(App, { store, renderProps });
+      const apphtml = renderToString(el);
+      res.send(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>SSR with RR</title>
+            <link rel="icon" href="data:;base64,=">
+            <script>window.__INITIAL_DATA__ = ${serialize(data)}</script>
+          </head>
 
-        <body>
-          <div id="app">${apphtml}</div>
-          <script src="/bundle.js" defer></script>
-        </body>
-      </html>
-    `);
+          <body>
+            <div id="app">${apphtml}</div>
+            <script src="/bundle.js" defer></script>
+          </body>
+        </html>
+      `);
+    })
   })
 })
 

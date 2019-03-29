@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import { fetchPopularRepos } from './api';
 
 class Grid extends Component {
   render() {
@@ -22,4 +23,8 @@ const mapStateToProps = (state) => {
   const { items } = state.grid;
   return { items };
 }
-export default connect(mapStateToProps)(Grid);
+
+
+const ConnectedView =  connect(mapStateToProps)(Grid);
+ConnectedView.getInitialData = () => (fetchPopularRepos());
+export default ConnectedView;
