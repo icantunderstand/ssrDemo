@@ -7,9 +7,9 @@ import RouterContext from 'react-router/lib/RouterContext';
 const isServer = typeof window === 'undefined';
 const RouterContainer = isServer ? RouterContext : Router;
 
-const App = ({ store, routes, history }) =>
+const App = ({ store, routes, history, renderProps }) =>
   <Provider store={store}>
-    <RouterContainer routes={routes} history={history}  />
+    <RouterContainer routes={routes} history={history} {...renderProps} />
   </Provider>;
 
 

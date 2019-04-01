@@ -33,6 +33,7 @@ export default ({ routes }) => {
       matchOpts.location = location;
     }
     match(matchOpts, (err, redirectLocation, routerState) => {
+      console.log(routerState);
       let rerr;
       if (err) {
         rerr = err;
@@ -64,7 +65,6 @@ export default ({ routes }) => {
   };
 
   matchLocation(null)(routerState => {
-    console.log(routerState);
     const el = React.createElement(App, { store, routes, history });
     ReactDOM.render(el, domEl);
     history.listen((location) => {

@@ -19,7 +19,6 @@ app.get("*", (req,res,next) => {
     if(err) {
       console.log(err);
     }
-    console.log(req.url, renderProps);
     let promise = null;
     if(renderProps.components && renderProps.components[0].getInitialData) {
       promise = store.dispatch(renderProps.components[0].getInitialData());
