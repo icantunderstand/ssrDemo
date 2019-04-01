@@ -22,6 +22,13 @@ const browserConfig = {
       }
     ]
   },
+  devServer: {
+    before: function(app, server) {
+      app.get('/some/aa', function(req,res) {
+        res.json({ name: 100 });
+      })
+    }
+  },
   plugins: [
     new webpack.DefinePlugin({
       __isBrowser__: "true"

@@ -1,13 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        ssss
-      </div>
-    )
-  }
-}
+import { Provider } from 'react-redux';
+import Router from 'react-router/lib/Router';
+import RouterContext from 'react-router/lib/RouterContext';
+
+const isServer = typeof window === 'undefined';
+const RouterContainer = isServer ? RouterContext : Router;
+
+const App = ({ store, routes, history }) =>
+  <Provider store={store}>
+    <RouterContainer routes={routes} history={history}  />
+  </Provider>;
+
 
 export default App

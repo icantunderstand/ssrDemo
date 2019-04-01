@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Nav from './Nav';
-
-export default function Home () {
-  return (
-    <div>
-      Select a Language
-      <Nav />
-    </div>
-  )
+import { connect } from 'react-redux';
+class Home extends Component {
+  render() {
+    return (
+      <div>
+        Select a Language
+        <Nav />
+      </div>
+    )
+  }
 }
+
+export default connect()(Home);

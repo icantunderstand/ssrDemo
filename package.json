@@ -19,7 +19,8 @@
     "serialize-javascript": "^1.6.1"
   },
   "scripts": {
-    "start": "webpack -w  --mode development & nodemon server.js"
+    "start": "webpack -w  --mode development & nodemon server.js",
+    "dev": "webpack-dev-server --open --mode development & nodemon server.js"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",

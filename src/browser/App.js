@@ -8,7 +8,6 @@ const isServer = typeof window === 'undefined';
 const RouterContainer = isServer ? RouterContext : Router;
 
 const App = ({ store, renderProps, history }) => {
-  console.log(renderProps, 'renderProps', history);
   return (<Provider store={store}>
     <RouterContainer {...renderProps} history={history} />
   </Provider>);

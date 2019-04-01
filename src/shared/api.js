@@ -1,4 +1,5 @@
 import { UPDATE_LANGUAGE_ITEM } from '../shared/reducer/grid';
+import fetch from 'isomorphic-fetch'
 
 export const fetchPopularRepos = (language = 'all') => (dispatch, getState) => {
   const items = [
@@ -14,4 +15,9 @@ export const fetchPopularRepos = (language = 'all') => (dispatch, getState) => {
     }
   })
   return Promise.resolve()
+}
+export const fetchData = () => (dispatch) => {
+  fetch('/some/aa').then(data => {
+    console.log(data.json());
+  })
 }

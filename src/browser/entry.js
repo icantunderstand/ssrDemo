@@ -7,6 +7,7 @@ import browserHistory from 'react-router/lib/browserHistory';
 import match from 'react-router/lib/match';
 import { Provider }  from 'react-redux';
 import Router from 'react-router/lib/Router';
+import App from '../shared/index';
 
 
 export default ({ routes }) => {
@@ -64,10 +65,8 @@ export default ({ routes }) => {
 
   matchLocation(null)(routerState => {
     console.log(routerState);
-    const App = <Provider store={store}>
-      <Router history={history} routes={routes}  />
-    </Provider>
-    ReactDOM.render(App, domEl);
+    const el = React.createElement(App, { store, routes, history });
+    ReactDOM.render(el, domEl);
     history.listen((location) => {
       console.log(location);
       matchLocation(location)(getInitialData);

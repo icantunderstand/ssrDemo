@@ -3,7 +3,7 @@ import cors from 'cors';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import serialize from 'serialize-javascript';
-import App from '../shared/index';
+import App from '../shared/index';;
 import { match } from 'react-router';
 import routes from '../shared/routes.js';
 import configureStore from '../shared/reducer/configStore';
@@ -19,6 +19,7 @@ app.get("*", (req,res,next) => {
     if(err) {
       console.log(err);
     }
+    console.log(req.url, renderProps);
     let promise = null;
     if(renderProps.components && renderProps.components[0].getInitialData) {
       promise = store.dispatch(renderProps.components[0].getInitialData());
