@@ -2,7 +2,12 @@ const path = require('path');
 const webpack = require('webpack');
 const nodeExternal = require('webpack-node-externals');
 const DllReferencePlugin = require('webpack/lib/DllReferencePlugin');
-
+const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+// 接受参数是否使用
+const HappyPack = require('happypack');
 const browserConfig = {
   entry: './src/browser/index.js',
   output: {
@@ -14,12 +19,16 @@ const browserConfig = {
     rules: [
       {
         test: /\.js$/,
-        use: "babel-loader",
+        use: ['happypack/loader?id=babel'],
         include: path.resolve(__dirname, 'src'),
+        exclude: path.resolve(__dirname, 'node_modules')
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          'happypack/loader?id=css',
+          'css-loader'
+        ],
       }
     ]
   },
@@ -31,9 +40,23 @@ const browserConfig = {
     }
   },
   plugins: [
+    new WebpackBuildNotifierPlugin({
+      title: 'client success',
+      suppressSuccess: true
+    }),
+    new HappyPack({
+      id: 'babel',
+      loaders: ['babel-loader'],
+    }),
+    new HappyPack({
+      id: 'css',
+      loaders: [MiniCssExtractPlugin.loader]
+    }),
     new webpack.DefinePlugin({
       __isBrowser__: "true"
-    })
+    }),
+    new ProgressBarPlugin(),
+    // new ParallelUglifyPlugin({})
   ],
 }
 
@@ -49,7 +72,7 @@ const serverConfig = {
   module: {
     rules: [
       {
-        test: /\.js/,
+        test: /\.js$/,
         use: "babel-loader",
       }
     ]
