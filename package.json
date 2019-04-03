@@ -5,6 +5,7 @@
   "author": "icantunderstand@yeah.net",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
     "cors": "^2.8.5",
     "isomorphic-fetch": "^2.2.1",
     "nodemon": "^1.18.10",

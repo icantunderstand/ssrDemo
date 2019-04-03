@@ -12,6 +12,7 @@ import { logger } from './middleware';
 const app = express();
 app.use(cors());
 app.use(express.static('public'));
+app.use(express.static('dist'));
 app.use(logger);
 const store = configureStore({});
 app.get("*", (req,res,next) => {
@@ -41,6 +42,7 @@ app.get("*", (req,res,next) => {
 
           <body>
             <div id="app">${apphtml}</div>
+            <script src="/react.dll.js"></script>
             <script src="/bundle.js" defer></script>
           </body>
         </html>

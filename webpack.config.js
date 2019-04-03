@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const nodeExternal = require('webpack-node-externals');
+const DllReferencePlugin = require('webpack/lib/DllReferencePlugin');
 
 const browserConfig = {
   entry: './src/browser/index.js',
@@ -54,6 +55,9 @@ const serverConfig = {
     ]
   },
   plugins: [
+    new DllReferencePlugin({
+      manifest: require('./dist/react.manifest.json')
+    }),
     new webpack.DefinePlugin({
       __isBrowser__: 'false'
     })
