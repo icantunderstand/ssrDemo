@@ -39,6 +39,7 @@ const browserConfig = {
       })
     }
   },
+  devtool: "source-map",
   plugins: [
     new WebpackBuildNotifierPlugin({
       title: 'client success',
@@ -74,6 +75,10 @@ const serverConfig = {
       {
         test: /\.js$/,
         use: "babel-loader",
+      },
+      {
+        test: /\.css$/,
+        use: ['ignore-loader']
       }
     ]
   },

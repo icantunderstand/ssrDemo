@@ -8,6 +8,7 @@
     "@material-ui/core": "^3.9.3",
     "babel-runtime": "^6.26.0",
     "cors": "^2.8.5",
+    "ignore-loader": "^0.1.2",
     "isomorphic-fetch": "^2.2.1",
     "nodemon": "^1.18.10",
     "react": "^16.8.5",
@@ -22,7 +23,8 @@
   },
   "scripts": {
     "start": "webpack -w  --mode development & nodemon server.js",
-    "dev": "webpack-dev-server --open --mode development & nodemon server.js"
+    "dev": "webpack-dev-server --open --mode development & nodemon server.js",
+    "check": "eslint ./src"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
