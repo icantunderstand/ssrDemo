@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        Select a Language
+          Select a Language
         <Nav />
       </div>
     );

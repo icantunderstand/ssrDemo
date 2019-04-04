@@ -20,4 +20,12 @@ devsver的启动其实的启动了node的server
 接入 prettier 
 
 
+add husky
+
+
+// pre-receive   触发构建
+
+
+
+
 

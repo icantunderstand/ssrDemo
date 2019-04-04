@@ -1,13 +1,13 @@
+/* eslint global-require:0 */
 const path = require('path');
 const webpack = require('webpack');
 const nodeExternal = require('webpack-node-externals');
 const DllReferencePlugin = require('webpack/lib/DllReferencePlugin');
 const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
-// 接受参数是否使用
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HappyPack = require('happypack');
+
 const browserConfig = {
   entry: './src/browser/index.js',
   output: {
@@ -21,29 +21,28 @@ const browserConfig = {
         test: /\.js$/,
         use: ['happypack/loader?id=babel'],
         include: path.resolve(__dirname, 'src'),
-        exclude: path.resolve(__dirname, 'node_modules')
+        exclude: path.resolve(__dirname, 'node_modules'),
       },
       {
         test: /\.css$/,
         use: [
           'happypack/loader?id=css',
-          'css-loader'
+          'css-loader',
         ],
-      }
-    ]
+      },
+    ],
   },
   devServer: {
-    before: function(app, server) {
-      app.get('/some/aa', function(req,res) {
-        res.json({ name: 100 });
-      })
-    }
+    open: 'Google Chrome',
+    proxy: {
+      '**': 'http://localhost:8081',
+    },
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   plugins: [
     new WebpackBuildNotifierPlugin({
       title: 'client success',
-      suppressSuccess: true
+      suppressSuccess: true,
     }),
     new HappyPack({
       id: 'babel',
@@ -51,15 +50,14 @@ const browserConfig = {
     }),
     new HappyPack({
       id: 'css',
-      loaders: [MiniCssExtractPlugin.loader]
+      loaders: [MiniCssExtractPlugin.loader],
     }),
     new webpack.DefinePlugin({
-      __isBrowser__: "true"
+      __isBrowser__: 'true',
     }),
     new ProgressBarPlugin(),
-    // new ParallelUglifyPlugin({})
   ],
-}
+};
 
 const serverConfig = {
   entry: './src/server/index.js',
@@ -67,29 +65,29 @@ const serverConfig = {
   externals: [nodeExternal()],
   output: {
     path: __dirname,
-    filename: "server.js",
+    filename: 'server.js',
     publicPath: '/',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: "babel-loader",
+        use: 'babel-loader',
       },
       {
         test: /\.css$/,
-        use: ['ignore-loader']
-      }
-    ]
+        use: ['ignore-loader'],
+      },
+    ],
   },
   plugins: [
     new DllReferencePlugin({
-      manifest: require('./dist/react.manifest.json')
+      manifest: require('./dist/react.manifest.json'),
     }),
     new webpack.DefinePlugin({
-      __isBrowser__: 'false'
-    })
-  ]
-}
+      __isBrowser__: 'false',
+    }),
+  ],
+};
 
 module.exports = [browserConfig, serverConfig];

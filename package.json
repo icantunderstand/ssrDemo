@@ -20,12 +20,19 @@
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
-    "serialize-javascript": "^1.6.1"
+    "serialize-javascript": "^1.6.1",
+    "yargs": "^13.2.2"
   },
   "scripts": {
-    "start": "webpack -w  --mode development & nodemon server.js",
-    "dev": "webpack-dev-server --open --mode development & nodemon server.js",
-    "check": "eslint ./src"
+    "build": "webpack -w",
+    "start": "webpack-dev-server --open --mode development & node server.js --status=dev",
+    "check": "eslint ./src",
+    "online": "node server.js --status=online"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run check"
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",

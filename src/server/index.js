@@ -8,7 +8,12 @@ import App from '../shared/index';
 import routes from '../shared/routes';
 import configureStore from '../shared/reducer/configStore';
 import logger from './middleware';
+import portMap from './port';
 
+console.log(portMap);
+const { status } = require('yargs').argv;
+
+console.log(portMap[status]);
 const app = express();
 app.use(cors());
 app.use(express.static('public'));
@@ -18,7 +23,16 @@ const store = configureStore({});
 app.get('*', (req, res) => {
   match({ location: req.url, routes }, (err, redirectLocation, renderProps) => {
     if (err) {
-      console.log(err);
+      res.writeHead(500, { ContentType: 'text/html' });
+      res.write('<html><div>server is error</div></html>');
+      res.end();
+      return;
+    }
+    if (!renderProps) {
+      res.writeHead(404, { ContentType: 'text/html' });
+      res.write('<html><div>404 not found</div></html>');
+      res.end();
+      return;
     }
     let promise = null;
     if (renderProps.components && renderProps.components[0].getInitialData) {
@@ -50,6 +64,7 @@ app.get('*', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(portMap[status], () => {
+  // if online 服务注册
   console.log('server is on');
 });

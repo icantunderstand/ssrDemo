@@ -22,6 +22,8 @@ module.exports = {
     ],
     "rules": {
       'no-console': 'off',
-      'react/prop-types': 'off'
+      'react/prop-types': 'off',
+      'react/prefer-stateless-function': 'off',
+      'react/jsx-filename-extension' : 'off'
     }
 };
