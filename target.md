@@ -1,29 +1,20 @@
-first compile src => lib
-
-
-server referencre lib  (transform)
-
-
-start
+// first  如何处理服务端css的问题
 
 
 to do  use universal-webpack 同构
 
-多页 => 单页
+//  多页切单页
 
 
-devsver的启动其实的启动了node的server
+
+// 预处理  接入postCss   maybe ts
+
+//  clean code 接入 prettier 
 
 
-接入postCss
-
-接入 prettier 
+// git hook   add husky   pre-receive   触发构建
 
 
-add husky
-
-
-// pre-receive   触发构建
 
 
 
