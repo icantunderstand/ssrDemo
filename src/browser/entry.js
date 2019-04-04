@@ -1,12 +1,11 @@
+/* eslint no-underscore-dangle:0 */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { syncHistoryWithStore } from 'react-router-redux';
-import filterComponents from './filterComponent';
-import configStore from '../shared/reducer/configStore';
 import browserHistory from 'react-router/lib/browserHistory';
 import match from 'react-router/lib/match';
-import { Provider }  from 'react-redux';
-import Router from 'react-router/lib/Router';
+import configStore from '../shared/reducer/configStore';
+import filterComponents from './filterComponent';
 import App from '../shared/index';
 
 
@@ -21,14 +20,13 @@ export default ({ routes }) => {
   /**
    * 获取页面上所有的渲染节点
    */
-  const domEl = document.getElementById("app");
+  const domEl = document.getElementById('app');
   /**
    * server 端使用了 match 并有动态路由
    * 这里也需要 match 到匹配的子路由才能渲染
    */
-  const matchLocation = location => onMatch => {
+  const matchLocation = location => (onMatch) => {
     const matchOpts = { history, routes };
-    const url = window.location.href;
     if (location) {
       matchOpts.location = location;
     }
@@ -45,32 +43,25 @@ export default ({ routes }) => {
       }
 
       if (rerr) {
-        console.log(error);
+        console.log(rerr);
       } else {
         onMatch(routerState);
       }
     });
   };
 
-  const getInitialData = routerState => {
-    /**
-     * 与 server 端共享的 getInitialData 逻辑
-     * 参考 server/view/reactRouterReduxView.js
-     *
-     * 组件定义的 getInitialData 出现错误后交给业务层处理
-     */
-    console.log(routerState, 1000);
+  const getInitialData = (routerState) => {
     const initDataFunc = filterComponents(routerState.components, 'getInitialData');
     Promise.all(initDataFunc.map(func => store.dispatch(func()))).catch(() => {});
   };
 
-  matchLocation(null)(routerState => {
+  matchLocation(null)(() => {
     const el = React.createElement(App, { store, routes, history });
     ReactDOM.render(el, domEl);
     history.listen((location) => {
       console.log(location);
       matchLocation(location)(getInitialData);
-    })
+    });
     // router.listen(location => matchLocation(location)(getInitialData));
   });
 };

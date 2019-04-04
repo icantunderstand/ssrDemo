@@ -1,7 +1,7 @@
-import { UPDATE_LANGUAGE_ITEM } from '../shared/reducer/grid';
-import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch';
+import { UPDATE_LANGUAGE_ITEM } from './reducer/grid';
 
-export const fetchPopularRepos = (language = 'all') => (dispatch, getState) => {
+export const fetchPopularRepos = () => (dispatch) => {
   const items = [
     { name: 'sss', owner: 'sss' },
     { name: 'aaa', owner: 'aaa' },
@@ -12,12 +12,12 @@ export const fetchPopularRepos = (language = 'all') => (dispatch, getState) => {
     type: UPDATE_LANGUAGE_ITEM,
     payload: {
       items,
-    }
-  })
-  return Promise.resolve()
-}
-export const fetchData = () => (dispatch) => {
-  fetch('/some/aa').then(data => {
+    },
+  });
+  return Promise.resolve();
+};
+export const fetchData = () => () => {
+  fetch('/some/aa').then((data) => {
     console.log(data.json());
-  })
-}
+  });
+};

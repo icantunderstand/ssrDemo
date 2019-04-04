@@ -1,4 +1,4 @@
-export const logger = (req, res, next) => {
+export default (req, res, next) => {
   console.log('logger');
   next();
-}
+};
