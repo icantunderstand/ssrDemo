@@ -17,4 +17,7 @@ devsver的启动其实的启动了node的server
 
 接入postCss
 
+接入 prettier 
+
+
 
