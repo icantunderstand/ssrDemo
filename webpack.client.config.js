@@ -6,7 +6,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HappyPack = require('happypack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const { mode } = require('yargs').argv;
+const { report } = require('yargs').argv;
 
 
 const browserConfig = {
@@ -39,6 +39,7 @@ const browserConfig = {
           },
         ],
         include: [path.resolve(__dirname, './src')],
+        exclude: [path.resolve(__dirname, 'node_modules')],
       },
       {
         test: /\.css$/,
@@ -55,6 +56,7 @@ const browserConfig = {
           'css-loader',
         ],
         include: [path.resolve(__dirname, './src')],
+        exclude: [path.resolve(__dirname, 'node_modules')],
       },
     ],
   },
@@ -84,7 +86,7 @@ const browserConfig = {
   ],
 };
 
-if (mode === 'development') {
+if (report) {
   browserConfig.plugins.push(new BundleAnalyzerPlugin());
 }
 

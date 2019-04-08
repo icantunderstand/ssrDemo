@@ -29,7 +29,7 @@ module.exports = {
   },
   plugins: [
     new DllReferencePlugin({
-      manifest: require('./dist/react.manifest.json'),
+      manifest: require('./dist/dll.manifest.json'),
     }),
     new webpack.DefinePlugin({
       __isBrowser__: 'false',

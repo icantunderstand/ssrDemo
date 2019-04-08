@@ -30,7 +30,8 @@
     "build": "webpack --config webpack_dll.config.js && webpack --config webpack.server.config.js & webpack --config webpack.client.config.js",
     "start": "webpack-dev-server --open --mode development --config webpack.client.config.js & node ./public/server.js --status=dev",
     "check": "eslint ./src",
-    "online": "node ./public/server.js --status=online"
+    "online": "node ./public/server.js --status=online",
+    "report": "webpack --config webpack.client.config.js --mode development --report true"
   },
   "husky": {
     "hooks": {

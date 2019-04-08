@@ -18,3 +18,10 @@ to do  use universal-webpack 同构
 
 
 // 用文件写webpack的构建流程
+
+
+// 项目小的时候 有的插件是起不到效果的
+
+
+
+// webpack 的 exclude 优先级高

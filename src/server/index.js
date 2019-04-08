@@ -53,7 +53,7 @@ app.get('*', (req, res) => {
 
           <body>
             <div id="app">${apphtml}</div>
-            <script src="/react.dll.js"></script>
+            <script src="/dll.dll.js"></script>
             <script src="/entry.js" defer></script>
           </body>
         </html>
