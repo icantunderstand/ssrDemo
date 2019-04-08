@@ -1,3 +1,4 @@
+/* eslint global-require: 0 */
 import express from 'express';
 import cors from 'cors';
 import React from 'react';
@@ -7,6 +8,7 @@ import { match } from 'react-router';
 import routes from '../shared/routes';
 import configureStore from '../shared/reducer/configStore';
 import logger from './middleware';
+import getRouterConfig from './getRouterConfig';
 import portMap from './port';
 import App from '../browser/App';
 
@@ -17,8 +19,14 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(express.static('dist'));
 app.use(logger);
+app.use(getRouterConfig);
 const store = configureStore({});
 app.get('*', (req, res) => {
+  const { appName } = req;
+  const manifest = require('../../public/manifest.json');
+  console.log(appName, manifest);
+  const jsSrc = manifest[`${appName}.js`];
+  console.log(routes);
   match({ location: req.url, routes }, (err, redirectLocation, renderProps) => {
     if (err) {
       res.writeHead(500, { ContentType: 'text/html' });
@@ -54,7 +62,7 @@ app.get('*', (req, res) => {
           <body>
             <div id="app">${apphtml}</div>
             <script src="/dll.dll.js"></script>
-            <script src="/entry.js" defer></script>
+            <script src=${jsSrc} defer> </script>
           </body>
         </html>
       `);

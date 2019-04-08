@@ -5,7 +5,7 @@ const dllPlugin = require('webpack/lib/DllPlugin');
 
 module.exports = {
   entry: {
-    dll: ['react', 'react-dom'],
+    dll: ['react', 'react-dom', 'react-router'],
   },
   output: {
     filename: '[name].dll.js',

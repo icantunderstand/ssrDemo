@@ -5,13 +5,14 @@ const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HappyPack = require('happypack');
+const ManifestPlugin = require('webpack-manifest-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const { report } = require('yargs').argv;
 
 
 const browserConfig = {
   entry: {
-    entry: './src/browser/index.js',
+    github: './src/shared/gitHub/client.js',
   },
   target: 'web',
   output: {
@@ -30,7 +31,9 @@ const browserConfig = {
       {
         test: new RegExp('^(?!.*\\.global).*\\.css'),
         use: [
-          'style-loader',
+          {
+            loader: 'style-loader',
+          },
           {
             loader: 'css-loader',
             options: {
@@ -83,6 +86,7 @@ const browserConfig = {
       __isBrowser__: 'true',
     }),
     new ProgressBarPlugin(),
+    new ManifestPlugin(),
   ],
 };
 
@@ -90,4 +94,5 @@ if (report) {
   browserConfig.plugins.push(new BundleAnalyzerPlugin());
 }
 
-module.exports = browserConfig;
+
+module.exports = [browserConfig];

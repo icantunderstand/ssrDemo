@@ -12,19 +12,9 @@ import App from '../shared/index';
 export default ({ routes }) => {
   const store = configStore(window.__INITIAL_DATA__);
 
-  /**
-   * 将 store 和 react-router 使用的 history 同步起来
-   */
   const history = syncHistoryWithStore(browserHistory, store);
-
-  /**
-   * 获取页面上所有的渲染节点
-   */
   const domEl = document.getElementById('app');
-  /**
-   * server 端使用了 match 并有动态路由
-   * 这里也需要 match 到匹配的子路由才能渲染
-   */
+  // 区分多入口
   const matchLocation = location => (onMatch) => {
     const matchOpts = { history, routes };
     if (location) {

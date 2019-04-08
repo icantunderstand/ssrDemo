@@ -23,6 +23,7 @@
     "redux-thunk": "^2.3.0",
     "serialize-javascript": "^1.6.1",
     "webpack": "^4.29.6",
+    "webpack-manifest-plugin": "^2.0.4",
     "webpack-node-externals": "^1.7.2",
     "yargs": "^13.2.2"
   },
@@ -31,7 +32,8 @@
     "start": "webpack-dev-server --open --mode development --config webpack.client.config.js & node ./public/server.js --status=dev",
     "check": "eslint ./src",
     "online": "node ./public/server.js --status=online",
-    "report": "webpack --config webpack.client.config.js --mode development --report true"
+    "report": "webpack --config webpack.client.config.js --mode development --report true",
+    "reportFile": "webpack --config webpack.client.config.js --mode development --profile --json > stats.json"
   },
   "husky": {
     "hooks": {
