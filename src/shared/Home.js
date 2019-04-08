@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
-import './style.css';
+import './test.global.css';
 
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div className="name">
           Select a Language
         <Nav />
       </div>

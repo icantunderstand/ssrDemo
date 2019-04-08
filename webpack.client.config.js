@@ -28,11 +28,33 @@ const browserConfig = {
         exclude: path.resolve(__dirname, 'node_modules'),
       },
       {
+        test: new RegExp('^(?!.*\\.global).*\\.css'),
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+        ],
+        include: [path.resolve(__dirname, './src')],
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader',
           'css-loader',
         ],
+        include: [path.resolve(__dirname, 'node_modules')],
+      },
+      {
+        test: new RegExp('^(.*\\.global).*\\.css'),
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+        include: [path.resolve(__dirname, './src')],
       },
     ],
   },
