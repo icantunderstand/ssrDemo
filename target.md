@@ -7,11 +7,8 @@ to do  use universal-webpack 同构
 
 
 
-// 预处理  接入postCss   maybe ts
-
-//  clean code 接入 prettier 
-
-
+// 预处理  接入postCss 
+ 
 // git hook   add husky   pre-receive   触发构建
 
 
@@ -20,3 +17,4 @@ to do  use universal-webpack 同构
 
 
 
+// 用文件写webpack的构建流程

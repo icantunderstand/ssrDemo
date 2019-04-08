@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
+import './style.css';
 
 class Home extends Component {
   render() {

@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "@material-ui/core": "^3.9.3",
+    "babel-plugin-transform-require-ignore": "^0.1.1",
     "babel-runtime": "^6.26.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
@@ -21,13 +22,15 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "serialize-javascript": "^1.6.1",
+    "webpack": "^4.29.6",
+    "webpack-node-externals": "^1.7.2",
     "yargs": "^13.2.2"
   },
   "scripts": {
-    "build": "webpack -w",
-    "start": "webpack-dev-server --open --mode development & node server.js --status=dev",
+    "build": "webpack --config webpack_dll.config.js && webpack --config webpack.server.config.js & webpack --config webpack.client.config.js",
+    "start": "webpack-dev-server --open --mode development --config webpack.client.config.js & node ./public/server.js --status=dev",
     "check": "eslint ./src",
-    "online": "node server.js --status=online"
+    "online": "node ./public/server.js --status=online"
   },
   "husky": {
     "hooks": {
@@ -52,12 +55,11 @@
     "mini-css-extract-plugin": "^0.5.0",
     "progress-bar-webpack-plugin": "^1.12.1",
     "style-loader": "^0.23.1",
-    "universal-webpack": "^0.6.11",
-    "webpack": "^4.29.6",
     "webpack-build-notifier": "^0.1.31",
+    "webpack-bundle-analyzer": "^3.2.0",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1",
-    "webpack-node-externals": "^1.7.2",
+    "webpack-isomorphic-tools": "^3.0.6",
     "webpack-parallel-uglify-plugin": "^1.1.0"
   }
 }

@@ -1,11 +1,11 @@
+/* eslint new-cap:0 */
 const path = require('path');
-const dllPlugin = require("webpack/lib/DllPlugin");
-
+const dllPlugin = require('webpack/lib/DllPlugin');
 
 
 module.exports = {
   entry: {
-    react: ['react', 'react-dom']
+    react: ['react', 'react-dom'],
   },
   output: {
     filename: '[name].dll.js',
@@ -16,6 +16,6 @@ module.exports = {
     new dllPlugin({
       name: '_dll_[name]',
       path: path.join(__dirname, 'dist', '[name].manifest.json'),
-    })
-  ]
-}
+    }),
+  ],
+};
