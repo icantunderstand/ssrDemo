@@ -6,7 +6,7 @@ class Nav extends Component {
   render() {
     return (
       <div>
-        <Link to="/popular/javascript">javascript</Link>
+        <Link to="/github/popular/javascript">javascript</Link>
       </div>
     );
   }

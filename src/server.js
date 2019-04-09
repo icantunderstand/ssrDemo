@@ -1,1 +1,1 @@
-require('./github/client');
+require('./github/server');

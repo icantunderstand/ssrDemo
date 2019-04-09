@@ -5,6 +5,7 @@ import fetchPopularRepos from './api';
 class Grid extends Component {
   render() {
     const { items } = this.props;
+    console.log(items);
     return (
       <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
         {items.map(({ name, owner }) => (
@@ -20,7 +21,7 @@ class Grid extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  const { items } = state.grid;
+  const { items } = state.github;
   return { items };
 };
 

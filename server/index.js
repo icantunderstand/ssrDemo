@@ -26,8 +26,9 @@ app.get('*', (req, res) => {
   const manifest = require('../public/manifest.json');
   console.log(appName, manifest);
   const jsSrc = manifest[`${appName}.js`];
-  console.log(routes);
+  console.log(jsSrc, 1000000);
   match({ location: req.url, routes }, (err, redirectLocation, renderProps) => {
+    console.log(req.url);
     if (err) {
       res.writeHead(500, { ContentType: 'text/html' });
       res.write('<html><div>server is error</div></html>');

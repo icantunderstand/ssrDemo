@@ -3,13 +3,14 @@ import Grid from './Grid';
 
 const routes = [
   {
-    path: '/',
-    exact: true,
+    path: '/github',
     component: Home,
-  },
-  {
-    path: '/popular/:id',
-    component: Grid,
+    childRoutes: [
+      {
+        path: 'popular/:id',
+        component: Grid,
+      },
+    ],
   },
 ];
 
