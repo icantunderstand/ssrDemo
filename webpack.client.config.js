@@ -13,6 +13,7 @@ const { report } = require('yargs').argv;
 const browserConfig = {
   entry: {
     github: './src/github/client.js',
+    countApp: './src/countApp/client.js',
   },
   target: 'web',
   output: {
@@ -110,9 +111,6 @@ const libConifg = {
               [
                 '@babel/preset-env',
                 {
-                  targets: {
-                    node: true,
-                  },
                   modules: 'commonjs',
                 },
               ],

@@ -86,6 +86,50 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/@babel/runtime/helpers/assertThisInitialized.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _assertThisInitialized(self) {\n  if (self === void 0) {\n    throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\");\n  }\n\n  return self;\n}\n\nmodule.exports = _assertThisInitialized;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/assertThisInitialized.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/classCallCheck.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _classCallCheck(instance, Constructor) {\n  if (!(instance instanceof Constructor)) {\n    throw new TypeError(\"Cannot call a class as a function\");\n  }\n}\n\nmodule.exports = _classCallCheck;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/classCallCheck.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/createClass.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/createClass.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _defineProperties(target, props) {\n  for (var i = 0; i < props.length; i++) {\n    var descriptor = props[i];\n    descriptor.enumerable = descriptor.enumerable || false;\n    descriptor.configurable = true;\n    if (\"value\" in descriptor) descriptor.writable = true;\n    Object.defineProperty(target, descriptor.key, descriptor);\n  }\n}\n\nfunction _createClass(Constructor, protoProps, staticProps) {\n  if (protoProps) _defineProperties(Constructor.prototype, protoProps);\n  if (staticProps) _defineProperties(Constructor, staticProps);\n  return Constructor;\n}\n\nmodule.exports = _createClass;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/createClass.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/defineProperty.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/defineProperty.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _defineProperty(obj, key, value) {\n  if (key in obj) {\n    Object.defineProperty(obj, key, {\n      value: value,\n      enumerable: true,\n      configurable: true,\n      writable: true\n    });\n  } else {\n    obj[key] = value;\n  }\n\n  return obj;\n}\n\nmodule.exports = _defineProperty;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/defineProperty.js?");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js":
 /*!**************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js ***!
@@ -134,6 +178,28 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/getPrototypeOf.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _getPrototypeOf(o) {\n  module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {\n    return o.__proto__ || Object.getPrototypeOf(o);\n  };\n  return _getPrototypeOf(o);\n}\n\nmodule.exports = _getPrototypeOf;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/getPrototypeOf.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/inherits.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/inherits.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf */ \"./node_modules/@babel/runtime/helpers/setPrototypeOf.js\");\n\nfunction _inherits(subClass, superClass) {\n  if (typeof superClass !== \"function\" && superClass !== null) {\n    throw new TypeError(\"Super expression must either be null or a function\");\n  }\n\n  subClass.prototype = Object.create(superClass && superClass.prototype, {\n    constructor: {\n      value: subClass,\n      writable: true,\n      configurable: true\n    }\n  });\n  if (superClass) setPrototypeOf(subClass, superClass);\n}\n\nmodule.exports = _inherits;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/inherits.js?");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/interopRequireDefault.js ***!
@@ -153,6 +219,50 @@ eval("function _interopRequireDefault(obj) {\n  return obj && obj.__esModule ? o
 /***/ (function(module, exports) {
 
 eval("function _interopRequireWildcard(obj) {\n  if (obj && obj.__esModule) {\n    return obj;\n  } else {\n    var newObj = {};\n\n    if (obj != null) {\n      for (var key in obj) {\n        if (Object.prototype.hasOwnProperty.call(obj, key)) {\n          var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};\n\n          if (desc.get || desc.set) {\n            Object.defineProperty(newObj, key, desc);\n          } else {\n            newObj[key] = obj[key];\n          }\n        }\n      }\n    }\n\n    newObj[\"default\"] = obj;\n    return newObj;\n  }\n}\n\nmodule.exports = _interopRequireWildcard;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/interopRequireWildcard.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/objectSpread.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/objectSpread.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var defineProperty = __webpack_require__(/*! ./defineProperty */ \"./node_modules/@babel/runtime/helpers/defineProperty.js\");\n\nfunction _objectSpread(target) {\n  for (var i = 1; i < arguments.length; i++) {\n    var source = arguments[i] != null ? arguments[i] : {};\n    var ownKeys = Object.keys(source);\n\n    if (typeof Object.getOwnPropertySymbols === 'function') {\n      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {\n        return Object.getOwnPropertyDescriptor(source, sym).enumerable;\n      }));\n    }\n\n    ownKeys.forEach(function (key) {\n      defineProperty(target, key, source[key]);\n    });\n  }\n\n  return target;\n}\n\nmodule.exports = _objectSpread;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/objectSpread.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var _typeof = __webpack_require__(/*! ../helpers/typeof */ \"./node_modules/@babel/runtime/helpers/typeof.js\");\n\nvar assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized */ \"./node_modules/@babel/runtime/helpers/assertThisInitialized.js\");\n\nfunction _possibleConstructorReturn(self, call) {\n  if (call && (_typeof(call) === \"object\" || typeof call === \"function\")) {\n    return call;\n  }\n\n  return assertThisInitialized(self);\n}\n\nmodule.exports = _possibleConstructorReturn;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/setPrototypeOf.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _setPrototypeOf(o, p) {\n  module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {\n    o.__proto__ = p;\n    return o;\n  };\n\n  return _setPrototypeOf(o, p);\n}\n\nmodule.exports = _setPrototypeOf;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/setPrototypeOf.js?");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/typeof.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/typeof.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function _typeof2(obj) { if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj; }; } return _typeof2(obj); }\n\nfunction _typeof(obj) {\n  if (typeof Symbol === \"function\" && _typeof2(Symbol.iterator) === \"symbol\") {\n    module.exports = _typeof = function _typeof(obj) {\n      return _typeof2(obj);\n    };\n  } else {\n    module.exports = _typeof = function _typeof(obj) {\n      return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : _typeof2(obj);\n    };\n  }\n\n  return _typeof(obj);\n}\n\nmodule.exports = _typeof;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/typeof.js?");
 
 /***/ }),
 
@@ -670,6 +780,42 @@ eval("module.exports = function(originalModule) {\n\tif (!originalModule.webpack
 
 /***/ }),
 
+/***/ "./src/countApp/Count.js":
+/*!*******************************!*\
+  !*** ./src/countApp/Count.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ \"./node_modules/@babel/runtime/helpers/interopRequireWildcard.js\");\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\"));\n\nvar _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ \"./node_modules/@babel/runtime/helpers/createClass.js\"));\n\nvar _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ \"./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js\"));\n\nvar _getPrototypeOf3 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ \"./node_modules/@babel/runtime/helpers/getPrototypeOf.js\"));\n\nvar _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ \"./node_modules/@babel/runtime/helpers/inherits.js\"));\n\nvar _react = _interopRequireWildcard(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\n\nvar Count =\n/*#__PURE__*/\nfunction (_Component) {\n  (0, _inherits2.default)(Count, _Component);\n\n  function Count() {\n    var _getPrototypeOf2;\n\n    var _this;\n\n    (0, _classCallCheck2.default)(this, Count);\n\n    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {\n      args[_key] = arguments[_key];\n    }\n\n    _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(Count)).call.apply(_getPrototypeOf2, [this].concat(args)));\n    _this.state = {\n      count: 0\n    };\n    return _this;\n  }\n\n  (0, _createClass2.default)(Count, [{\n    key: \"render\",\n    value: function render() {\n      var _this2 = this;\n\n      var count = this.state.count;\n      return _react.default.createElement(\"div\", {\n        onClick: function onClick() {\n          _this2.setState({\n            count: count + 1\n          });\n        }\n      }, count);\n    }\n  }]);\n  return Count;\n}(_react.Component);\n\nexports.default = Count;\n\n//# sourceURL=webpack:///./src/countApp/Count.js?");
+
+/***/ }),
+
+/***/ "./src/countApp/routes.js":
+/*!********************************!*\
+  !*** ./src/countApp/routes.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _Count = _interopRequireDefault(__webpack_require__(/*! ./Count */ \"./src/countApp/Count.js\"));\n\nvar routes = [{\n  path: '/countApp',\n  component: _Count.default\n}];\nvar _default = routes;\nexports.default = _default;\n\n//# sourceURL=webpack:///./src/countApp/routes.js?");
+
+/***/ }),
+
+/***/ "./src/countApp/server.js":
+/*!********************************!*\
+  !*** ./src/countApp/server.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _routes = _interopRequireDefault(__webpack_require__(/*! ./routes */ \"./src/countApp/routes.js\"));\n\nvar _default = _routes.default;\nexports.default = _default;\n\n//# sourceURL=webpack:///./src/countApp/server.js?");
+
+/***/ }),
+
 /***/ "./src/github/Grid.js":
 /*!****************************!*\
   !*** ./src/github/Grid.js ***!
@@ -678,7 +824,7 @@ eval("module.exports = function(originalModule) {\n\tif (!originalModule.webpack
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nvar _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ \"./node_modules/@babel/runtime/helpers/interopRequireWildcard.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _react = _interopRequireWildcard(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _api = _interopRequireDefault(__webpack_require__(/*! ./api */ \"./src/github/api.js\"));\n\nclass Grid extends _react.Component {\n  render() {\n    const {\n      items\n    } = this.props;\n    console.log(items);\n    return _react.default.createElement(\"ul\", {\n      style: {\n        display: 'flex',\n        flexWrap: 'wrap'\n      }\n    }, items.map(({\n      name,\n      owner\n    }) => _react.default.createElement(\"li\", {\n      key: name,\n      style: {\n        margin: 30\n      }\n    }, _react.default.createElement(\"ul\", null, _react.default.createElement(\"li\", null, name), _react.default.createElement(\"li\", null, owner)))));\n  }\n\n}\n\nconst mapStateToProps = state => {\n  const {\n    items\n  } = state.github;\n  return {\n    items\n  };\n};\n\nconst ConnectedView = (0, _reactRedux.connect)(mapStateToProps)(Grid);\n\nConnectedView.getInitialData = () => (0, _api.default)();\n\nvar _default = ConnectedView;\nexports.default = _default;\n\n//# sourceURL=webpack:///./src/github/Grid.js?");
+eval("\n\nvar _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ \"./node_modules/@babel/runtime/helpers/interopRequireWildcard.js\");\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\"));\n\nvar _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ \"./node_modules/@babel/runtime/helpers/createClass.js\"));\n\nvar _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ \"./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js\"));\n\nvar _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ \"./node_modules/@babel/runtime/helpers/getPrototypeOf.js\"));\n\nvar _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ \"./node_modules/@babel/runtime/helpers/inherits.js\"));\n\nvar _react = _interopRequireWildcard(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _api = _interopRequireDefault(__webpack_require__(/*! ./api */ \"./src/github/api.js\"));\n\nvar Grid =\n/*#__PURE__*/\nfunction (_Component) {\n  (0, _inherits2.default)(Grid, _Component);\n\n  function Grid() {\n    (0, _classCallCheck2.default)(this, Grid);\n    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Grid).apply(this, arguments));\n  }\n\n  (0, _createClass2.default)(Grid, [{\n    key: \"render\",\n    value: function render() {\n      var items = this.props.items;\n      console.log(items);\n      return _react.default.createElement(\"ul\", {\n        style: {\n          display: 'flex',\n          flexWrap: 'wrap'\n        }\n      }, items.map(function (_ref) {\n        var name = _ref.name,\n            owner = _ref.owner;\n        return _react.default.createElement(\"li\", {\n          key: name,\n          style: {\n            margin: 30\n          }\n        }, _react.default.createElement(\"ul\", null, _react.default.createElement(\"li\", null, name), _react.default.createElement(\"li\", null, owner)));\n      }));\n    }\n  }]);\n  return Grid;\n}(_react.Component);\n\nvar mapStateToProps = function mapStateToProps(state) {\n  var items = state.github.items;\n  return {\n    items: items\n  };\n};\n\nvar ConnectedView = (0, _reactRedux.connect)(mapStateToProps)(Grid);\n\nConnectedView.getInitialData = function () {\n  return (0, _api.default)();\n};\n\nvar _default = ConnectedView;\nexports.default = _default;\n\n//# sourceURL=webpack:///./src/github/Grid.js?");
 
 /***/ }),
 
@@ -690,7 +836,7 @@ eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/he
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nvar _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ \"./node_modules/@babel/runtime/helpers/interopRequireWildcard.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _react = _interopRequireWildcard(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\n\nvar _Nav = _interopRequireDefault(__webpack_require__(/*! ./Nav */ \"./src/github/Nav.js\"));\n\nclass Home extends _react.Component {\n  render() {\n    return _react.default.createElement(\"div\", null, \"Select a Language\", _react.default.createElement(_Nav.default, null));\n  }\n\n}\n\nvar _default = Home;\nexports.default = _default;\n\n//# sourceURL=webpack:///./src/github/Home.js?");
+eval("\n\nvar _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ \"./node_modules/@babel/runtime/helpers/interopRequireWildcard.js\");\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\"));\n\nvar _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ \"./node_modules/@babel/runtime/helpers/createClass.js\"));\n\nvar _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ \"./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js\"));\n\nvar _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ \"./node_modules/@babel/runtime/helpers/getPrototypeOf.js\"));\n\nvar _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ \"./node_modules/@babel/runtime/helpers/inherits.js\"));\n\nvar _react = _interopRequireWildcard(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\n\nvar _Nav = _interopRequireDefault(__webpack_require__(/*! ./Nav */ \"./src/github/Nav.js\"));\n\nvar Home =\n/*#__PURE__*/\nfunction (_Component) {\n  (0, _inherits2.default)(Home, _Component);\n\n  function Home() {\n    (0, _classCallCheck2.default)(this, Home);\n    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Home).apply(this, arguments));\n  }\n\n  (0, _createClass2.default)(Home, [{\n    key: \"render\",\n    value: function render() {\n      var children = this.props.children;\n      return _react.default.createElement(\"div\", null, \"Select a Language\", _react.default.createElement(_Nav.default, null), children);\n    }\n  }]);\n  return Home;\n}(_react.Component);\n\nvar _default = Home;\nexports.default = _default;\n\n//# sourceURL=webpack:///./src/github/Home.js?");
 
 /***/ }),
 
@@ -702,7 +848,7 @@ eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/he
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nvar _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ \"./node_modules/@babel/runtime/helpers/interopRequireWildcard.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _react = _interopRequireWildcard(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\n\nvar _Link = _interopRequireDefault(__webpack_require__(/*! react-router/lib/Link */ \"./node_modules/react-router/lib/Link.js\"));\n\nclass Nav extends _react.Component {\n  render() {\n    return _react.default.createElement(\"div\", null, _react.default.createElement(_Link.default, {\n      to: \"/github/popular/javascript\"\n    }, \"javascript\"));\n  }\n\n}\n\nvar _default = Nav;\nexports.default = _default;\n\n//# sourceURL=webpack:///./src/github/Nav.js?");
+eval("\n\nvar _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ \"./node_modules/@babel/runtime/helpers/interopRequireWildcard.js\");\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\"));\n\nvar _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/createClass */ \"./node_modules/@babel/runtime/helpers/createClass.js\"));\n\nvar _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ \"./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js\"));\n\nvar _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ \"./node_modules/@babel/runtime/helpers/getPrototypeOf.js\"));\n\nvar _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/inherits */ \"./node_modules/@babel/runtime/helpers/inherits.js\"));\n\nvar _react = _interopRequireWildcard(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\n\nvar _Link = _interopRequireDefault(__webpack_require__(/*! react-router/lib/Link */ \"./node_modules/react-router/lib/Link.js\"));\n\nvar Nav =\n/*#__PURE__*/\nfunction (_Component) {\n  (0, _inherits2.default)(Nav, _Component);\n\n  function Nav() {\n    (0, _classCallCheck2.default)(this, Nav);\n    return (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Nav).apply(this, arguments));\n  }\n\n  (0, _createClass2.default)(Nav, [{\n    key: \"render\",\n    value: function render() {\n      return _react.default.createElement(\"div\", null, _react.default.createElement(_Link.default, {\n        to: \"/github/popular/javascript\"\n      }, \"javascript\"));\n    }\n  }]);\n  return Nav;\n}(_react.Component);\n\nvar _default = Nav;\nexports.default = _default;\n\n//# sourceURL=webpack:///./src/github/Nav.js?");
 
 /***/ }),
 
@@ -714,7 +860,7 @@ eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/he
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _grid = __webpack_require__(/*! ./reducer/grid */ \"./src/github/reducer/grid.js\");\n\nvar _default = () => dispatch => {\n  const items = [{\n    name: 'sss',\n    owner: 'sss'\n  }, {\n    name: 'aaa',\n    owner: 'aaa'\n  }, {\n    name: 'bbb',\n    owner: 'bbb'\n  }, {\n    name: 'xxx',\n    owner: 'xxx'\n  }];\n  dispatch({\n    type: _grid.UPDATE_LANGUAGE_ITEM,\n    payload: {\n      items\n    }\n  });\n  return Promise.resolve();\n};\n\nexports.default = _default;\n\n//# sourceURL=webpack:///./src/github/api.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _grid = __webpack_require__(/*! ./reducer/grid */ \"./src/github/reducer/grid.js\");\n\nvar _default = function _default() {\n  return function (dispatch) {\n    var items = [{\n      name: 'sss',\n      owner: 'sss'\n    }, {\n      name: 'aaa',\n      owner: 'aaa'\n    }, {\n      name: 'bbb',\n      owner: 'bbb'\n    }, {\n      name: 'xxx',\n      owner: 'xxx'\n    }];\n    dispatch({\n      type: _grid.UPDATE_LANGUAGE_ITEM,\n      payload: {\n        items: items\n      }\n    });\n    return Promise.resolve();\n  };\n};\n\nexports.default = _default;\n\n//# sourceURL=webpack:///./src/github/api.js?");
 
 /***/ }),
 
@@ -726,7 +872,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = exports.UPDATE_LANGUAGE_ITEM = void 0;\nconst UPDATE_LANGUAGE_ITEM = 'UPDATE_LANGUAGE_ITEM';\nexports.UPDATE_LANGUAGE_ITEM = UPDATE_LANGUAGE_ITEM;\nconst initState = {\n  items: []\n};\n\nvar _default = (state = initState, action) => {\n  switch (action.type) {\n    case UPDATE_LANGUAGE_ITEM:\n      {\n        return { ...state,\n          ...action.payload\n        };\n      }\n\n    default:\n      {\n        return state;\n      }\n  }\n};\n\nexports.default = _default;\n\n//# sourceURL=webpack:///./src/github/reducer/grid.js?");
+eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = exports.UPDATE_LANGUAGE_ITEM = void 0;\n\nvar _objectSpread2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/objectSpread */ \"./node_modules/@babel/runtime/helpers/objectSpread.js\"));\n\nvar UPDATE_LANGUAGE_ITEM = 'UPDATE_LANGUAGE_ITEM';\nexports.UPDATE_LANGUAGE_ITEM = UPDATE_LANGUAGE_ITEM;\nvar initState = {\n  items: []\n};\n\nvar _default = function _default() {\n  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initState;\n  var action = arguments.length > 1 ? arguments[1] : undefined;\n\n  switch (action.type) {\n    case UPDATE_LANGUAGE_ITEM:\n      {\n        return (0, _objectSpread2.default)({}, state, action.payload);\n      }\n\n    default:\n      {\n        return state;\n      }\n  }\n};\n\nexports.default = _default;\n\n//# sourceURL=webpack:///./src/github/reducer/grid.js?");
 
 /***/ }),
 
@@ -738,7 +884,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _Home = _interopRequireDefault(__webpack_require__(/*! ./Home */ \"./src/github/Home.js\"));\n\nvar _Grid = _interopRequireDefault(__webpack_require__(/*! ./Grid */ \"./src/github/Grid.js\"));\n\nconst routes = [{\n  path: '/github',\n  component: _Home.default,\n  childRoutes: [{\n    path: 'popular/:id',\n    component: _Grid.default\n  }]\n}];\nvar _default = routes;\nexports.default = _default;\n\n//# sourceURL=webpack:///./src/github/routes.js?");
+eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ \"./node_modules/@babel/runtime/helpers/interopRequireDefault.js\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _Home = _interopRequireDefault(__webpack_require__(/*! ./Home */ \"./src/github/Home.js\"));\n\nvar _Grid = _interopRequireDefault(__webpack_require__(/*! ./Grid */ \"./src/github/Grid.js\"));\n\nvar routes = [{\n  path: '/github',\n  component: _Home.default,\n  childRoutes: [{\n    path: 'popular/:id',\n    component: _Grid.default\n  }]\n}];\nvar _default = routes;\nexports.default = _default;\n\n//# sourceURL=webpack:///./src/github/routes.js?");
 
 /***/ }),
 
@@ -762,7 +908,7 @@ eval("\n\nvar _interopRequireDefault = __webpack_require__(/*! @babel/runtime/he
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ./github/server */ \"./src/github/server.js\");\n\n//# sourceURL=webpack:///./src/server.js?");
+eval("\n\n__webpack_require__(/*! ./github/server */ \"./src/github/server.js\");\n\n__webpack_require__(/*! ./countApp/server */ \"./src/countApp/server.js\");\n\n//# sourceURL=webpack:///./src/server.js?");
 
 /***/ })
 

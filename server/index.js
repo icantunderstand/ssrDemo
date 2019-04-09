@@ -1,11 +1,10 @@
-/* eslint global-require: 0 */
+/* eslint global-require: 0, import/no-dynamic-require:0 */
 import express from 'express';
 import cors from 'cors';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import serialize from 'serialize-javascript';
 import { match } from 'react-router';
-import routes from '../src/github/routes';
 import configureStore from '../src/reducer/configStore';
 import logger from './middleware';
 import getRouterConfig from './getRouterConfig';
@@ -24,9 +23,9 @@ const store = configureStore({});
 app.get('*', (req, res) => {
   const { appName } = req;
   const manifest = require('../public/manifest.json');
-  console.log(appName, manifest);
   const jsSrc = manifest[`${appName}.js`];
-  console.log(jsSrc, 1000000);
+  const routes = require(`../lib/${appName}/routes`).default;
+  console.log(routes);
   match({ location: req.url, routes }, (err, redirectLocation, renderProps) => {
     console.log(req.url);
     if (err) {
