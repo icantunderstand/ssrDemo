@@ -6,7 +6,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    server: './src/server/index.js',
+    server: './server/index.js',
   },
   target: 'node',
   externals: [nodeExternal()],

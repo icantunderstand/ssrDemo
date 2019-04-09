@@ -1,11 +1,3 @@
-// first  如何处理服务端css的问题
-
-
-to do  use universal-webpack 同构
-
-//  多页切单页
-
-
 
 // 预处理  接入postCss 
  
@@ -20,8 +12,7 @@ to do  use universal-webpack 同构
 // 用文件写webpack的构建流程
 
 
-// 项目小的时候 有的插件是起不到效果的
 
+//  多页切单页
 
-
-// webpack 的 exclude 优先级高
+src => lib

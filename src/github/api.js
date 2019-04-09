@@ -1,7 +1,7 @@
-import fetch from 'isomorphic-fetch';
+
 import { UPDATE_LANGUAGE_ITEM } from './reducer/grid';
 
-export const fetchPopularRepos = () => (dispatch) => {
+export default () => (dispatch) => {
   const items = [
     { name: 'sss', owner: 'sss' },
     { name: 'aaa', owner: 'aaa' },
@@ -15,9 +15,4 @@ export const fetchPopularRepos = () => (dispatch) => {
     },
   });
   return Promise.resolve();
-};
-export const fetchData = () => () => {
-  fetch('/some/aa').then((data) => {
-    console.log(data.json());
-  });
 };

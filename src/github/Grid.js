@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPopularRepos } from './api';
+import fetchPopularRepos from './api';
 
 class Grid extends Component {
   render() {

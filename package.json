@@ -12,6 +12,7 @@
     "express": "^4.16.4",
     "ignore-loader": "^0.1.2",
     "isomorphic-fetch": "^2.2.1",
+    "loader-utils": "^1.2.3",
     "nodemon": "^1.18.10",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
@@ -28,7 +29,7 @@
     "yargs": "^13.2.2"
   },
   "scripts": {
-    "build": "webpack --config webpack_dll.config.js && webpack --config webpack.server.config.js & webpack --config webpack.client.config.js",
+    "build": "webpack --config webpack_dll.config.js && webpack --config webpack.server.config.js & webpack --config webpack.client.config.js --mode development",
     "start": "webpack-dev-server --open --mode development --config webpack.client.config.js & node ./public/server.js --status=dev",
     "check": "eslint ./src",
     "online": "node ./public/server.js --status=online",

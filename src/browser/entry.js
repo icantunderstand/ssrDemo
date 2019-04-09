@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom';
 import { syncHistoryWithStore } from 'react-router-redux';
 import browserHistory from 'react-router/lib/browserHistory';
 import match from 'react-router/lib/match';
-import configStore from '../shared/reducer/configStore';
+import configStore from '../reducer/configStore';
 import filterComponents from './filterComponent';
-import App from '../shared/index';
+import App from './App';
 
 
 export default ({ routes }) => {

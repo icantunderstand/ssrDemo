@@ -5,12 +5,12 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import serialize from 'serialize-javascript';
 import { match } from 'react-router';
-import routes from '../shared/routes';
-import configureStore from '../shared/reducer/configStore';
+import routes from '../src/github/routes';
+import configureStore from '../src/reducer/configStore';
 import logger from './middleware';
 import getRouterConfig from './getRouterConfig';
 import portMap from './port';
-import App from '../browser/App';
+import App from '../src/browser/App';
 
 const { status } = require('yargs').argv;
 
@@ -23,7 +23,7 @@ app.use(getRouterConfig);
 const store = configureStore({});
 app.get('*', (req, res) => {
   const { appName } = req;
-  const manifest = require('../../public/manifest.json');
+  const manifest = require('../public/manifest.json');
   console.log(appName, manifest);
   const jsSrc = manifest[`${appName}.js`];
   console.log(routes);
