@@ -32,9 +32,6 @@ const browserConfig = {
         test: new RegExp('^(?!.*\\.global).*\\.css'),
         use: [
           {
-            loader: path.resolve(__dirname, './src/libLoader.js'),
-          },
-          {
             loader: 'style-loader',
           },
           {
@@ -72,9 +69,6 @@ const browserConfig = {
       '**': 'http://localhost:8081',
     },
   },
-  resolveLoader: {
-    modules: ['node_modules', './src'],
-  },
   plugins: [
     new WebpackBuildNotifierPlugin({
       title: 'client success',
@@ -102,65 +96,78 @@ if (report) {
 
 // src => lib
 
-// const libConifg = {
-//   entry: require.resolve('./src/server.js'),
-//   target: 'node',
-//   module: {
-//     rules: [
-//       {
-//         test: /\.js$/,
-//         use: ['babel-loader'],
-//         include: path.resolve(__dirname, 'src'),
-//         exclude: path.resolve(__dirname, 'node_modules'),
-//       },
-//       {
-//         test: /\.js$/,
-//         enforce: 'post',
-//         use: [
-//           {
-//             loader: path.resolve(__dirname, './src/libLoader.js'),
-//           },
-//         ],
-//       },
-//       {
-//         test: new RegExp('^(?!.*\\.global).*\\.css'),
-//         use: [
-//           {
-//             loader: 'style-loader',
-//           },
-//           {
-//             loader: 'css-loader',
-//             options: {
-//               modules: true,
-//             },
-//           },
-//         ],
-//         include: [path.resolve(__dirname, './src')],
-//         exclude: [path.resolve(__dirname, 'node_modules')],
-//       },
-//       {
-//         test: /\.css$/,
-//         use: [
-//           'style-loader',
-//           'css-loader',
-//         ],
-//         include: [path.resolve(__dirname, 'node_modules')],
-//       },
-//       {
-//         test: new RegExp('^(.*\\.global).*\\.css'),
-//         use: [
-//           'style-loader',
-//           'css-loader',
-//         ],
-//         include: [path.resolve(__dirname, './src')],
-//         exclude: [path.resolve(__dirname, 'node_modules')],
-//       },
-//     ],
-//   },
-//   resolveLoader: {
-//     modules: ['node_modules', './src'],
-//   },
-// };
+const libConifg = {
+  entry: require.resolve('./src/server.js'),
+  target: 'node',
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  targets: {
+                    node: true,
+                  },
+                  modules: 'commonjs',
+                },
+              ],
+              '@babel/preset-react',
+            ],
+          },
+        }],
+        include: path.resolve(__dirname, 'src'),
+        exclude: path.resolve(__dirname, 'node_modules'),
+      },
+      {
+        test: /\.js$/,
+        enforce: 'post',
+        use: [
+          {
+            loader: path.resolve(__dirname, './src/libLoader.js'),
+          },
+        ],
+      },
+      {
+        test: new RegExp('^(?!.*\\.global).*\\.css'),
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+        ],
+        include: [path.resolve(__dirname, './src')],
+        exclude: [path.resolve(__dirname, 'node_modules')],
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+        include: [path.resolve(__dirname, 'node_modules')],
+      },
+      {
+        test: new RegExp('^(.*\\.global).*\\.css'),
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+        include: [path.resolve(__dirname, './src')],
+        exclude: [path.resolve(__dirname, 'node_modules')],
+      },
+    ],
+  },
+};
 
 
-module.exports = [browserConfig];
+module.exports = [browserConfig, libConifg];
