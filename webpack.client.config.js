@@ -67,7 +67,7 @@ const browserConfig = {
   devServer: {
     open: 'Google Chrome',
     proxy: {
-      '**': 'http://localhost:8081',
+      '/': 'http://localhost:8081',
     },
   },
   plugins: [
@@ -168,4 +168,4 @@ const libConifg = {
 };
 
 
-module.exports = [browserConfig, libConifg];
+module.exports = [browserConfig];

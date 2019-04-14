@@ -72,5 +72,5 @@ app.get('*', (req, res) => {
 
 app.listen(portMap[status], () => {
   // if online 服务注册
-  console.log('server is on');
+  console.log(`server is on ${portMap[status]}`);
 });
